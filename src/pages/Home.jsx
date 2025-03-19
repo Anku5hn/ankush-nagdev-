@@ -2,7 +2,7 @@ import React,{useState, useEffect} from "react";
 import { GithubOutlined, LinkedinFilled, XOutlined } from "@ant-design/icons";
 import StoreOne from "../assets/project-images/StoreOne.png";
 import WorldLink from "../assets/project-images/WorldLink.png";
-import ToDo from "../assets/project-images/ToDO.png";
+import ToDo from "../assets/project-images/ToDo.png";
 import VueTopics from "../assets/project-images/VueTopics.png";
 import GentleSense from "../assets/project-images/GentleSense.png";
 import SpentIt from "../assets/project-images/SpentIt.png";
