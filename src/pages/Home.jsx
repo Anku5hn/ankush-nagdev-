@@ -234,7 +234,7 @@ handleScroll();
             Tailwind, React, <span className="text-black">CSS Animations</span>,
             custom cursor, and more.
           </p>
-          <a href="" target="_blank">
+          <a href="https://worldlink-ashy.vercel.app/" target="_blank">
             <img
               src={WorldLink}
               alt="WorldLink"
