@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { GithubOutlined, LinkedinFilled, XOutlined } from "@ant-design/icons";
+import { GithubOutlined, LinkedinFilled, XOutlined,MailOutlined } from "@ant-design/icons";
 import StoreOne from "../assets/project-images/StoreOne.png";
 import WorldLink from "../assets/project-images/WorldLink.png";
 import ToDo from "../assets/project-images/ToDo.png";
@@ -8,7 +8,9 @@ import GentleSense from "../assets/project-images/GentleSense.png";
 import SpentIt from "../assets/project-images/SpentIt.png";
 import MoveIt from "../assets/project-images/MoveIt.png";
 import Tindog from "../assets/project-images/Tindog.png";
+import CircleOne from '../components/CircleOne.jsx'
 const Home = () => {
+
   //referance hooks
   const section1Ref = useRef(null);
   const section2Ref = useRef(null);
@@ -46,7 +48,12 @@ const Home = () => {
   }, []);
   return (
     <>
-      <div className="px-6 py-12 md:hidden lg:hidden block font-serif">
+        <div className="relative h-screen">
+      <div className="fixed top-[48%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[100%] md:w-[50%] lg:w-[50%] h-auto sm:h rounded flex items-center justify-center">
+      <CircleOne />
+      </div>
+    </div>
+      <div className="px-6 py-12 md:hidden lg:hidden block font-serif absolute top-0 left-0">
         {/*Mobile Section*/}
         <div>
           {/*About-Mobile*/}
@@ -73,6 +80,11 @@ const Home = () => {
             <a href="https://x.com/ankushxcode" target="_blank">
               <span className="text-gray-500">
                 <XOutlined />
+              </span>
+            </a>
+            <a href="mailto:ankushnagdev@gmail.com" target="_blank">
+              <span className="text-gray-500">
+              <MailOutlined />
               </span>
             </a>
           </div>
@@ -130,19 +142,19 @@ const Home = () => {
             designs to reusable React components.
           </p>
           <p className="mt-3 text-xs">
-            <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gray-500">
+            <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gradient-to-r from-pink-500 to-blue-500">
               HTML
             </span>{" "}
-            <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gray-500">
+            <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gradient-to-r from-pink-500 to-blue-500">
               CSS
             </span>{" "}
-            <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gray-500">
+            <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gradient-to-r from-pink-500 to-blue-500">
               JavaScript
             </span>{" "}
-            <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gray-500">
+            <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gradient-to-r from-pink-500 to-blue-500">
               React
             </span>{" "}
-            <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gray-500">
+            <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gradient-to-r from-pink-500 to-blue-500">
               Tailwind
             </span>{" "}
           </p>
@@ -174,10 +186,10 @@ const Home = () => {
             Increased traffic by 5–10% per week by optimizing web pages for SEO.
           </p>
           <p className="mt-3 text-xs">
-            <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gray-500">
+            <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gradient-to-r from-pink-500 to-blue-500">
               HTML
             </span>{" "}
-            <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gray-500">
+            <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gradient-to-r from-pink-500 to-blue-500">
               CSS
             </span>
           </p>
@@ -510,12 +522,12 @@ const Home = () => {
             <span className="font-semibold text-black">Visual Studio Code</span>
             . Built with{" "}
             <span className="font-semibold text-black">React.js</span> and{" "}
-            <span className="font-semibold text-black">TailwindCSS</span>
+            <span className="font-semibold text-black">TailwindCSS.</span>
           </p>
         </div>
       </div>
       {/*MOBILE ENDS HERE*/}
-      <div className="w-full hidden h-screen md:flex lg:flex justify-center items-center font-serif">
+      <div className="w-full hidden h-screen md:flex lg:flex justify-center items-center font-serif absolute top-0 left-0">
         {/*outmost container desktop starts here*/}
         <div className="w-5/6 h-full flex justify-between">
           {/*outer container*/}
@@ -574,6 +586,11 @@ const Home = () => {
                   <XOutlined />
                 </span>
               </a>
+              <a href="mailto:ankushnagdev@gmail.com" target="_blank">
+                <span className="text-gray-500 hover:text-black">
+                <MailOutlined />
+                </span>
+              </a>
             </div>
           </div>
           {/*left static ends here*/}
@@ -604,7 +621,7 @@ const Home = () => {
               <h2 className="text-lg font-bold p-5" id="childOne">
                 EXPERIENCE
               </h2>
-              <div className="hover:bg-gray-200 rounded-md cursor-pointer p-5">
+              <div className="hover:bg-gray-200/25 bg-opacity-25 rounded-md cursor-pointer p-5">
                 <p className="text-gray-500 mt-2">2023 - 2024</p>
                 <a href="https://sivanandaelectronics.com/" target="_blank">
                   <span className="text-black">
@@ -634,24 +651,24 @@ const Home = () => {
                   components.
                 </p>
                 <p className="mt-3 text-xs">
-                  <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gray-500">
+                  <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gradient-to-r from-pink-500 to-blue-500">
                     HTML
                   </span>{" "}
-                  <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gray-500">
+                  <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gradient-to-r from-pink-500 to-blue-500">
                     CSS
                   </span>{" "}
-                  <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gray-500">
+                  <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gradient-to-r from-pink-500 to-blue-500">
                     JavaScript
                   </span>{" "}
-                  <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gray-500">
+                  <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gradient-to-r from-pink-500 to-blue-500">
                     React
                   </span>{" "}
-                  <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gray-500">
+                  <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gradient-to-r from-pink-500 to-blue-500">
                     Tailwind
                   </span>{" "}
                 </p>
               </div>
-              <div className="hover:bg-gray-200 rounded-md cursor-pointer p-5">
+              <div className="hover:bg-gray-200/25 rounded-md cursor-pointer p-5">
                 <p className="text-gray-500 mt-5">2022 - 2023</p>
                 <a
                   href="https://igeeksclub.com/author/ankushnagdev/"
@@ -682,10 +699,10 @@ const Home = () => {
                   pages for SEO.
                 </p>
                 <p className="mt-3 text-xs">
-                  <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gray-500">
+                  <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gradient-to-r from-pink-500 to-blue-500">
                     HTML
                   </span>{" "}
-                  <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gray-500">
+                  <span className="px-2 py-1 rounded-l-full rounded-r-full font-bold text-white bg-gradient-to-r from-pink-500 to-blue-500">
                     CSS
                   </span>
                 </p>
@@ -700,7 +717,7 @@ const Home = () => {
                 Some of the things I've built!
               </p>
               <p className="mt-5 text-xl p-5">React Projects</p>
-              <div className="hover:bg-gray-200 p-5 rounded-md">
+              <div className="hover:bg-gray-200/25 p-5 rounded-md">
                 <a
                   href="https://store-one-three-phi.vercel.app/"
                   target="_blank"
@@ -741,7 +758,7 @@ const Home = () => {
                   />
                 </a>
               </div>
-              <div className="hover:bg-gray-200 p-5 rounded-md">
+              <div className="hover:bg-gray-200/25 p-5 rounded-md">
                 <a href="https://worldlink-ashy.vercel.app/" target="_blank">
                   <p className="text-gray-500 mt-5">2025</p>
                   <span className="text-black">
@@ -776,7 +793,7 @@ const Home = () => {
                   />
                 </a>
               </div>
-              <div className="hover:bg-gray-200 p-5 rounded-md">
+              <div className="hover:bg-gray-200/25 p-5 rounded-md">
                 <a href="https://to-do-eta-red.vercel.app/" target="_blank">
                   <p className="text-gray-500 mt-5">2025</p>
                   <span className="text-black">
@@ -812,7 +829,7 @@ const Home = () => {
                 </a>
               </div>
               <p className="mt-5 text-xl p-5">Vue Project</p>
-              <div className="hover:bg-gray-200 p-5 rounded-md">
+              <div className="hover:bg-gray-200/25 p-5 rounded-md">
                 <a href="https://vue-topics.vercel.app/" target="_blank">
                   <p className="text-gray-500 mt-5">2025</p>
                   <span className="text-black">
@@ -849,7 +866,7 @@ const Home = () => {
               </div>
               <p className="mt-5 text-xl p-5">Full Stack Projects</p>
               {/*card starts here*/}
-              <div className="hover:bg-gray-200 p-5 rounded-md">
+              <div className="hover:bg-gray-200/25 p-5 rounded-md">
                 <a
                   href="https://gentlesense-9iz3.onrender.com/"
                   target="_blank"
@@ -894,7 +911,7 @@ const Home = () => {
               </div>
               {/*card ends here */}
               {/*card starts here*/}
-              <div className="hover:bg-gray-200 p-5 rounded-md">
+              <div className="hover:bg-gray-200/25 p-5 rounded-md">
                 <a href="https://spentit-j1er.onrender.com/" target="_blank">
                   <p className="text-gray-500 mt-5">2024</p>
                   <span className="text-black">
@@ -933,7 +950,7 @@ const Home = () => {
               </div>
               {/*card ends here */}
               <p className="mt-10 text-xl p-5">HTML + Bootstrap Projects</p>
-              <div className="hover:bg-gray-200 p-5 rounded-md">
+              <div className="hover:bg-gray-200/25 p-5 rounded-md">
                 <a href="https://anku5hn.github.io/moveit/" target="_blank">
                   <p className="text-gray-500 mt-5">2024</p>
                   <span className="text-black">
@@ -974,7 +991,7 @@ const Home = () => {
               </div>
               {/*card ends here */}
               {/*card ends here */}
-              <div className="hover:bg-gray-200 p-5 rounded-md">
+              <div className="hover:bg-gray-200/25 p-5 rounded-md">
                 <a href="https://anku5hn.github.io/tindog/" target="_blank">
                   <p className="text-gray-500 mt-5">2024</p>
                   <span className="text-black">
