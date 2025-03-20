@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { GithubOutlined, LinkedinFilled, XOutlined } from "@ant-design/icons";
 import StoreOne from "../assets/project-images/StoreOne.png";
 import WorldLink from "../assets/project-images/WorldLink.png";
@@ -9,43 +9,47 @@ import SpentIt from "../assets/project-images/SpentIt.png";
 import MoveIt from "../assets/project-images/MoveIt.png";
 import Tindog from "../assets/project-images/Tindog.png";
 const Home = () => {
-  const [about, setAbout] = useState(true);
-  const [childOne, setChildOne]= useState(false);
-  const [childTwo, setChildTwo] = useState(false);
+  //referance hooks
+  const section1Ref = useRef(null);
+  const section2Ref = useRef(null);
+  const section3Ref = useRef(null);
+  // State to track the currently active section
+  const [activeSection, setActiveSection] = useState("section1");
+  // Function to scroll to a specific section
+  const scrollToSection = (ref, sectionId) => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+    setActiveSection(sectionId); // Update active section when button is clicked
+  };
+  // Use useEffect to add and remove the scroll event listener
+  useEffect(() => {
+    // Function to determine which section is currently in view
+    const parentDiv = document.getElementById("parentContainer");
+    const handleScroll = () => {
+      const section1Top = section1Ref.current.offsetTop;
+      const section2Top = section2Ref.current.offsetTop;
+      const section3Top = section3Ref.current.offsetTop;
+      const scrollPosition = parentDiv.scrollTop;
+      // Determine which section is currently in view based on scroll position
+      if (scrollPosition >= section1Top && scrollPosition < section2Top) {
+        setActiveSection("section1");
+      } else if (
+        scrollPosition >= section2Top &&
+        scrollPosition < section3Top
+      ) {
+        setActiveSection("section2");
+      } else if (scrollPosition >= section3Top) {
+        setActiveSection("section3");
+      }
+    };
 
-  const handleScrollBtn = (val) =>{
-    const parentContainer = document.getElementById('parentContainer');
-    parentContainer.scrollTop = val;
-  }
-
-  useEffect(()=>{
-const parentDiv = document.getElementById('parentContainer');
-const handleScroll = () =>{
-  if(parentDiv.scrollTop >= 0 && parentDiv.scrollTop < 360){
-    setAbout(true);
-    setChildOne(false);
-    setChildTwo(false);
-  }else if(parentDiv.scrollTop >= 360 && parentDiv.scrollTop < 900){
-    setAbout(false);
-    setChildOne(true);
-    setChildTwo(false);
-  }else if(parentDiv.scrollTop >= 900){
-    setAbout(false);
-    setChildOne(false);
-    setChildTwo(true);
-  }
-
-}
-parentDiv.addEventListener('scroll',()=>{
-
-handleScroll();
-})
-  },[])
+    parentDiv.addEventListener("scroll", handleScroll);
+  }, []);
   return (
     <>
       <div className="px-6 py-12 md:hidden lg:hidden block font-serif">
+        {/*Mobile Section*/}
         <div>
-          {/*Heading Section*/}
+          {/*About-Mobile*/}
           <h1 className="text-4xl tracking-tight font-bold">Ankush Nagdev</h1>
           <p className="text-xl tracking-tight font-medium">Web Developer</p>
           <p className="text-gray-500">
@@ -74,6 +78,7 @@ handleScroll();
           </div>
         </div>
         <div className="mt-10">
+          {/*About-Mobile-Div*/}
           <h2 className="text-lg font-bold">ABOUT</h2>
           <p className="text-gray-500 mt-2">
             I'm a web developer passionate about crafting engaging and
@@ -94,9 +99,12 @@ handleScroll();
             proficient in HTML5, CSS3, Tailwind, JavaScript, and React.
           </p>
         </div>
+        {/*Experience-Mobile-Div*/}
         <div className="mt-10">
           <h2 className="text-lg font-bold">EXPERIENCE</h2>
+          {/*Experience-Mobile*/}
           <p className="text-gray-500 mt-2">2023 - 2024</p>
+          {/*Experience-Card1-Starts-here-mobile*/}
           <a href="https://sivanandaelectronics.com/" target="_blank">
             <span className="text-black">
               Sivananda Electronics
@@ -138,7 +146,9 @@ handleScroll();
               Tailwind
             </span>{" "}
           </p>
+          {/*Experience-Card1-ends-here-mobile*/}
           <p className="text-gray-500 mt-5">2022 - 2023</p>
+          {/*Experience-Card2-Starts-here-mobile*/}
           <a href="https://igeeksclub.com/author/ankushnagdev/" target="_blank">
             <span className="text-black">
               iGeeksClub
@@ -171,12 +181,16 @@ handleScroll();
               CSS
             </span>
           </p>
+          {/*Experience-Card2-ends-here-Mobile*/}
         </div>
         <div className="mt-10">
+          {/*Proeject-Div-Mobile*/}
           <h2 className="text-lg font-bold">PROJECTS</h2>
           <p className="text-gray-500">Some of the things I've built!</p>
           <p className="mt-5 text-xl">React Projects</p>
+          {/*React Projects-Mobile*/}
           <a href="https://store-one-three-phi.vercel.app/" target="_blank">
+            {/*Project-card-mobile*/}
             <p className="text-gray-500 mt-5">2025</p>
             <span className="text-black">
               StoreOne
@@ -209,7 +223,9 @@ handleScroll();
               className="w-[200px] h-auto grayscale hover:filter-none"
             />
           </a>
+          {/*Project-card-mobile*/}
           <a href="https://worldlink-ashy.vercel.app/" target="_blank">
+            {/*Project-card-mobile*/}
             <p className="text-gray-500 mt-5">2025</p>
             <span className="text-black">
               WorldLink
@@ -241,7 +257,9 @@ handleScroll();
               className="w-[200px] h-auto grayscale hover:filter-none"
             />
           </a>
+          {/*Project-card-mobile*/}
           <a href="https://to-do-eta-red.vercel.app/" target="_blank">
+            {/*Project-card-mobile*/}
             <p className="text-gray-500 mt-5">2025</p>
             <span className="text-black">
               ToDo
@@ -274,8 +292,10 @@ handleScroll();
               className="w-[200px] h-auto grayscale hover:filter-none"
             />
           </a>
+          {/*Project-card-mobile*/}
           <p className="mt-5 text-xl">Vue Project</p>
           <a href="https://vue-topics.vercel.app/" target="_blank">
+            {/*Project-card-mobile*/}
             <p className="text-gray-500 mt-5">2025</p>
             <span className="text-black">
               Vue Topics
@@ -306,6 +326,7 @@ handleScroll();
               className="w-[200px] h-auto grayscale hover:filter-none"
             />
           </a>
+          {/*Project-card-mobile*/}
           <p className="mt-5 text-xl">Full Stack Projects</p>
           {/*card starts here*/}
           <a href="https://gentlesense-9iz3.onrender.com/" target="_blank">
@@ -495,8 +516,11 @@ handleScroll();
       </div>
       {/*MOBILE ENDS HERE*/}
       <div className="w-full hidden h-screen md:flex lg:flex justify-center items-center font-serif">
+        {/*outmost container desktop starts here*/}
         <div className="w-5/6 h-full flex justify-between">
+          {/*outer container*/}
           <div className="sticky top-0 w-1/2 h-full p-4">
+            {/*Left static container here*/}
             <h1 className="text-4xl font-bold tracking-tight mt-10">
               Ankush Nagdev
             </h1>
@@ -505,9 +529,30 @@ handleScroll();
               I design and develop innovating web experiences that work!
             </p>
             <ul className="list-disc list-inside mt-[100px]">
-              <li className= {about && "font-bold"}><button className="cursor-pointer" onClick={()=>{handleScrollBtn(0)}}>About</button></li>
-              <li className={childOne && "font-bold"}><button className="cursor-pointer" onClick={()=>{handleScrollBtn(360)}}>Experience</button></li>
-              <li className={childTwo && "font-bold"}><button className="cursor-pointer" onClick={()=>{handleScrollBtn(901);}}>Projects</button></li>
+              <li className={activeSection == "section1" ? "font-bold" : ""}>
+                <button
+                  className="cursor-pointer"
+                  onClick={() => scrollToSection(section1Ref, "section1")}
+                >
+                  About
+                </button>
+              </li>
+              <li className={activeSection == "section2" ? "font-bold" : ""}>
+                <button
+                  className="cursor-pointer"
+                  onClick={() => scrollToSection(section2Ref, "section2")}
+                >
+                  Experience
+                </button>
+              </li>
+              <li className={activeSection == "section3" ? "font-bold" : ""}>
+                <button
+                  className="cursor-pointer"
+                  onClick={() => scrollToSection(section3Ref, "section3")}
+                >
+                  Projects
+                </button>
+              </li>
             </ul>
             <div className="flex gap-3 text-2xl mt-2 absolute bottom-10">
               <a href="https://github.com/Anku5hn" target="_blank">
@@ -531,8 +576,11 @@ handleScroll();
               </a>
             </div>
           </div>
+          {/*left static ends here*/}
           <div className="w-1/2 overflow-y-auto p-4" id="parentContainer">
-            <p className="text-gray-500 mt-10 px-5">
+            {/*Right scroll container starts here*/}
+            <p className="text-gray-500 mt-10 px-5" ref={section1Ref}>
+              {/*About Section desktop*/}
               I'm a web developer passionate about crafting engaging and
               innovative web experiences for users. I transform creative designs
               into functional and responsive websites and applications. My
@@ -551,8 +599,11 @@ handleScroll();
               objectives. I'm proficient in HTML5, CSS3, Tailwind, JavaScript,
               and React.
             </p>
-            <div className="mt-10">
-              <h2 className="text-lg font-bold p-5" id="childOne">EXPERIENCE</h2>
+            <div className="mt-10" ref={section2Ref}>
+              {/*Experience Section desktop*/}
+              <h2 className="text-lg font-bold p-5" id="childOne">
+                EXPERIENCE
+              </h2>
               <div className="hover:bg-gray-200 rounded-md cursor-pointer p-5">
                 <p className="text-gray-500 mt-2">2023 - 2024</p>
                 <a href="https://sivanandaelectronics.com/" target="_blank">
@@ -640,8 +691,11 @@ handleScroll();
                 </p>
               </div>
             </div>
-            <div className="mt-10">
-              <h2 className="text-lg font-bold p-5" id="childTwo">PROJECTS</h2>
+            <div className="mt-10" ref={section3Ref}>
+              {/*Projects Section Desktop*/}
+              <h2 className="text-lg font-bold p-5" id="childTwo">
+                PROJECTS
+              </h2>
               <p className="text-gray-500 p-5">
                 Some of the things I've built!
               </p>
@@ -988,10 +1042,11 @@ handleScroll();
                 </span>
                 . Built with{" "}
                 <span className="font-semibold text-black">React.js</span> and{" "}
-                <span className="font-semibold text-black">TailwindCSS</span>
+                <span className="font-semibold text-black">TailwindCSS.</span>
               </p>
             </div>
           </div>
+          {/*Right Scroll Container Ends Here*/}
         </div>
       </div>
     </>
