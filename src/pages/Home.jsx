@@ -294,7 +294,7 @@ const Home = () => {
             A simple ToDo list app to learn{" "}
             <span className="text-black">State Management</span>. Topics
             Covered: Tailwind, React,{" "}
-            <span className="text-black">Context API</span>, Responsive Design,
+            <span className="text-black">Redux</span>, Responsive Design,
             and more.
           </p>
           <a href="https://to-do-eta-red.vercel.app/" target="_blank">
@@ -817,7 +817,7 @@ const Home = () => {
                   A simple ToDo list app to learn{" "}
                   <span className="text-black">State Management</span>. Topics
                   Covered: Tailwind, React,{" "}
-                  <span className="text-black">Context API</span>, Responsive
+                  <span className="text-black">Redux</span>, Responsive
                   Design, and more.
                 </p>
                 <a href="https://to-do-eta-red.vercel.app/" target="_blank">
