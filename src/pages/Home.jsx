@@ -1,5 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
-import { GithubOutlined, LinkedinFilled, XOutlined,MailOutlined } from "@ant-design/icons";
+import {
+  GithubOutlined,
+  LinkedinFilled,
+  XOutlined,
+  MailOutlined,
+} from "@ant-design/icons";
 import StoreOne from "../assets/project-images/StoreOne.png";
 import WorldLink from "../assets/project-images/WorldLink.png";
 import ToDo from "../assets/project-images/ToDo.png";
@@ -8,9 +13,9 @@ import GentleSense from "../assets/project-images/GentleSense.png";
 import SpentIt from "../assets/project-images/SpentIt.png";
 import MoveIt from "../assets/project-images/MoveIt.png";
 import Tindog from "../assets/project-images/Tindog.png";
-import CircleOne from '../components/CircleOne.jsx'
+import CircleOne from "../components/CircleOne.jsx";
+import MyBlog from '../assets/project-images/MyBlog.png'
 const Home = () => {
-
   //referance hooks
   const section1Ref = useRef(null);
   const section2Ref = useRef(null);
@@ -48,11 +53,11 @@ const Home = () => {
   }, []);
   return (
     <>
-        <div className="relative h-screen">
-      <div className="fixed top-[48%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[100%] md:w-[50%] lg:w-[50%] h-auto sm:h rounded flex items-center justify-center">
-      <CircleOne />
+      <div className="relative h-screen">
+        <div className="fixed top-[48%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[100%] md:w-[50%] lg:w-[50%] h-auto sm:h rounded flex items-center justify-center">
+          <CircleOne />
+        </div>
       </div>
-    </div>
       <div className="px-6 py-12 md:hidden lg:hidden block font-serif absolute top-0 left-0">
         {/*Mobile Section*/}
         <div>
@@ -84,7 +89,7 @@ const Home = () => {
             </a>
             <a href="mailto:ankushnagdev@gmail.com" target="_blank">
               <span className="text-gray-500">
-              <MailOutlined />
+                <MailOutlined />
               </span>
             </a>
           </div>
@@ -199,10 +204,50 @@ const Home = () => {
           {/*Proeject-Div-Mobile*/}
           <h2 className="text-lg font-bold">PROJECTS</h2>
           <p className="text-gray-500">Some of the things I've built!</p>
-          <p className="mt-5 text-xl">React Projects</p>
+          {/*NextJS + TypeScript Projects*/}
+          <p className="mt-5 text-xl">NextJS + TypeScript Projects</p>
+          {/*Project-card-mobile*/}
+          <a href="https://ankush-nagdev-myblog.vercel.app/" target="_blank">
+            <p className="text-gray-500 mt-5">2025</p>
+            <span className="text-black">
+              MyBlog
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
+                aria-hidden="true"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+            </span>
+          </a>
+          <p className="text-gray-500">
+            A blog app made with NextJS and TypeScript,
+            <span className="text-black">
+              implemented SSR and achieved 50% reduced load times
+            </span>
+            functionality. Topics Covered: Tailwind, React,
+            <span className="text-black">
+              SSR with NextJS, TypeScript, JSONPlaceHolder, Material UI
+            </span>
+            , Responsive Design, and more.
+          </p>
+          <a href="https://ankush-nagdev-myblog.vercel.app/" target="_blank">
+            <img
+              src={MyBlog}
+              alt="MyBlog"
+              className="w-[200px] h-auto grayscale hover:filter-none"
+            />
+          </a>
           {/*React Projects-Mobile*/}
+          <p className="mt-5 text-xl">React Projects</p>
+          {/*Project-card-mobile*/}
           <a href="https://store-one-three-phi.vercel.app/" target="_blank">
-            {/*Project-card-mobile*/}
             <p className="text-gray-500 mt-5">2025</p>
             <span className="text-black">
               StoreOne
@@ -237,7 +282,6 @@ const Home = () => {
           </a>
           {/*Project-card-mobile*/}
           <a href="https://worldlink-ashy.vercel.app/" target="_blank">
-            {/*Project-card-mobile*/}
             <p className="text-gray-500 mt-5">2025</p>
             <span className="text-black">
               WorldLink
@@ -271,7 +315,6 @@ const Home = () => {
           </a>
           {/*Project-card-mobile*/}
           <a href="https://to-do-eta-red.vercel.app/" target="_blank">
-            {/*Project-card-mobile*/}
             <p className="text-gray-500 mt-5">2025</p>
             <span className="text-black">
               ToDo
@@ -293,9 +336,8 @@ const Home = () => {
           <p className="text-gray-500">
             A simple ToDo list app to learn{" "}
             <span className="text-black">State Management</span>. Topics
-            Covered: Tailwind, React,{" "}
-            <span className="text-black">Redux</span>, Responsive Design,
-            and more.
+            Covered: Tailwind, React, <span className="text-black">Redux</span>,
+            Responsive Design, and more.
           </p>
           <a href="https://to-do-eta-red.vercel.app/" target="_blank">
             <img
@@ -304,10 +346,9 @@ const Home = () => {
               className="w-[200px] h-auto grayscale hover:filter-none"
             />
           </a>
-          {/*Project-card-mobile*/}
           <p className="mt-5 text-xl">Vue Project</p>
+          {/*Project-card-mobile*/}
           <a href="https://vue-topics.vercel.app/" target="_blank">
-            {/*Project-card-mobile*/}
             <p className="text-gray-500 mt-5">2025</p>
             <span className="text-black">
               Vue Topics
@@ -338,7 +379,6 @@ const Home = () => {
               className="w-[200px] h-auto grayscale hover:filter-none"
             />
           </a>
-          {/*Project-card-mobile*/}
           <p className="mt-5 text-xl">Full Stack Projects</p>
           {/*card starts here*/}
           <a href="https://gentlesense-9iz3.onrender.com/" target="_blank">
@@ -588,7 +628,7 @@ const Home = () => {
               </a>
               <a href="mailto:ankushnagdev@gmail.com" target="_blank">
                 <span className="text-gray-500 hover:text-black">
-                <MailOutlined />
+                  <MailOutlined />
                 </span>
               </a>
             </div>
@@ -716,6 +756,49 @@ const Home = () => {
               <p className="text-gray-500 p-5">
                 Some of the things I've built!
               </p>
+               {/*NextJS + TypeScript Projects*/}
+          <p className="mt-5 text-xl p-5">NextJS + TypeScript Projects</p>
+          {/*Project-card-desktop*/}
+          <div className="hover:bg-gray-200/25 p-5 rounded-md">
+          <a href="https://ankush-nagdev-myblog.vercel.app/" target="_blank">
+            <p className="text-gray-500 mt-5">2025</p>
+            <span className="text-black">
+              MyBlog
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
+                aria-hidden="true"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+            </span>
+          </a>
+          <p className="text-gray-500">
+            A blog app made with NextJS and TypeScript,
+            <span className="text-black">
+              implemented SSR and achieved 50% reduced load times
+            </span>
+            functionality. Topics Covered: Tailwind, React,
+            <span className="text-black">
+              SSR with NextJS, TypeScript, JSONPlaceHolder, Material UI
+            </span>
+            , Responsive Design, and more.
+          </p>
+          <a href="https://ankush-nagdev-myblog.vercel.app/" target="_blank">
+            <img
+              src={MyBlog}
+              alt="MyBlog"
+              className="w-[200px] h-auto grayscale hover:filter-none"
+            />
+          </a>
+          </div>
+          {/*Project-card-desktop*/}
               <p className="mt-5 text-xl p-5">React Projects</p>
               <div className="hover:bg-gray-200/25 p-5 rounded-md">
                 <a
@@ -817,8 +900,8 @@ const Home = () => {
                   A simple ToDo list app to learn{" "}
                   <span className="text-black">State Management</span>. Topics
                   Covered: Tailwind, React,{" "}
-                  <span className="text-black">Redux</span>, Responsive
-                  Design, and more.
+                  <span className="text-black">Redux</span>, Responsive Design,
+                  and more.
                 </p>
                 <a href="https://to-do-eta-red.vercel.app/" target="_blank">
                   <img
