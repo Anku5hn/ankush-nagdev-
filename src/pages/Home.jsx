@@ -15,6 +15,7 @@ import MoveIt from "../assets/project-images/MoveIt.png";
 import Tindog from "../assets/project-images/Tindog.png";
 import CircleOne from "../components/CircleOne.jsx";
 import MyBlog from '../assets/project-images/MyBlog.png'
+import TradeX from '../assets/project-images/TradeX.png'
 const Home = () => {
   //referance hooks
   const section1Ref = useRef(null);
@@ -206,6 +207,44 @@ const Home = () => {
           <p className="text-gray-500">Some of the things I've built!</p>
           {/*NextJS + TypeScript Projects*/}
           <p className="mt-5 text-xl">NextJS + TypeScript Projects</p>
+           {/*Project-card-mobile*/}
+           <a href="https://tradex-ankush.vercel.app/" target="_blank">
+            <p className="text-gray-500 mt-5">2025</p>
+            <span className="text-black">
+              TradeX
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
+                aria-hidden="true"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+            </span>
+          </a>
+          <p className="text-gray-500">
+            A trade app made with NextJS and TypeScript,
+            <span className="text-black">
+              implemented animations, horizontal cards, tab 
+            </span>
+            functionality. Topics Covered: Tailwind, React,
+            <span className="text-black">
+              NextJS, TypeScript , Material UI
+            </span>
+            , Responsive Design, and more.
+          </p>
+          <a href="https://tradex-ankush.vercel.app/" target="_blank">
+            <img
+              src={TradeX}
+              alt="MyBlog"
+              className="w-[200px] h-auto grayscale hover:filter-none"
+            />
+          </a>
           {/*Project-card-mobile*/}
           <a href="https://ankush-nagdev-myblog.vercel.app/" target="_blank">
             <p className="text-gray-500 mt-5">2025</p>
@@ -758,6 +797,46 @@ const Home = () => {
               </p>
                {/*NextJS + TypeScript Projects*/}
           <p className="mt-5 text-xl p-5">NextJS + TypeScript Projects</p>
+                    {/*Project-card-desktop*/}
+                    <div className="hover:bg-gray-200/25 p-5 rounded-md">
+          <a href="https://tradex-ankush.vercel.app/" target="_blank">
+            <p className="text-gray-500 mt-5">2025</p>
+            <span className="text-black">
+              TradeX
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
+                aria-hidden="true"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+            </span>
+          </a>
+          <p className="text-gray-500">
+            A trade app made with NextJS and TypeScript,
+            <span className="text-black">
+            implemented animations, horizontal cards, tab
+            </span>
+            functionality. Topics Covered: Tailwind, React,
+            <span className="text-black">
+              NextJS, TypeScript , Material UI
+            </span>
+            , Responsive Design, and more.
+          </p>
+          <a href="https://tradex-ankush.vercel.app/" target="_blank">
+            <img
+              src={TradeX}
+              alt="MyBlog"
+              className="w-[200px] h-auto grayscale hover:filter-none"
+            />
+          </a>
+          </div>
           {/*Project-card-desktop*/}
           <div className="hover:bg-gray-200/25 p-5 rounded-md">
           <a href="https://ankush-nagdev-myblog.vercel.app/" target="_blank">
